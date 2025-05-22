@@ -40,7 +40,7 @@
                 android:textSize="30sp" />
 
             <ImageButton
-                android:id="@+id/btnInventario"
+                android:id="@+id/btnImgInventario"
                 android:layout_width="180dp"
                 android:layout_height="180dp"
                 android:layout_marginTop="50dp"
@@ -60,7 +60,7 @@
                 android:textSize="20sp" />
 
             <ImageButton
-                android:id="@+id/btnProductoPaquete"
+                android:id="@+id/btnImgProductoPaquete"
                 android:layout_width="180dp"
                 android:layout_height="180dp"
                 android:layout_marginTop="50dp"
@@ -80,7 +80,7 @@
                 android:textSize="20sp" />
 
             <ImageButton
-                android:id="@+id/btnProductoPaquete2"
+                android:id="@+id/btnImgProductoPaquete2"
                 android:layout_width="180dp"
                 android:layout_height="180dp"
                 android:layout_marginTop="50dp"
