@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">ProyectoFinalBarraLatina</string>
+    <string name="botonInicio">Iniciar sesión</string>
 </resources>
