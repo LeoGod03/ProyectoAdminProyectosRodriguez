@@ -6,6 +6,9 @@ plugins {
 android {
     namespace = "com.example.proyectofinalbarralatina"
     compileSdk = 35
+    viewBinding{
+        enable = true
+    }
 
     defaultConfig {
         applicationId = "com.example.proyectofinalbarralatina"
