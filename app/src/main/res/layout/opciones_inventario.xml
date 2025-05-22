@@ -40,7 +40,7 @@
             tools:layout_marginTop="30dp" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/tvIngredientes"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -59,11 +59,11 @@
             tools:ignore="SpeakableTextPresentCheck" />
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/tvUtensilios"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Ingredientes"
+            android:text="Utensilios"
             android:textColor="@color/amarilloBrillanet"
             android:textSize="20sp" />
 

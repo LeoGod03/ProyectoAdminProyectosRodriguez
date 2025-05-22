@@ -51,8 +51,7 @@
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textColorHint="@color/white"
-            tools:hint="Usuario del sistema"
-            tools:ignore="LabelFor" />
+            tools:hint="Usuario del sistema" />
 
         <EditText
             android:id="@+id/etpassPassword"
