@@ -6,107 +6,109 @@
     android:layout_height="match_parent"
     android:background="@color/fondo">
 
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <LinearLayout
+        <TextView
+            android:id="@+id/tvInventarioUtensilios"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginBottom="20dp"
-            android:orientation="vertical">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20sp"
+            android:gravity="center"
+            android:text="Inventario utensilios"
+            android:textColor="@color/amarilloBrillanet"
+            tools:textSize="30sp" />
 
-            <TextView
-                android:id="@+id/tvInventarioUtensilios"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20sp"
-                android:gravity="center"
-                android:text="Inventario utensilios"
-                android:textColor="@color/amarilloBrillanet"
-                tools:textSize="30sp" />
+        <EditText
+            android:id="@+id/etNombreUtensilio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20sp"
+            android:ems="10"
+            android:hint="Nombre utensilio"
+            android:inputType="text"
+            android:minHeight="48dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/amarilloBrillanet" />
 
-            <EditText
-                android:id="@+id/etNombreUtensilio"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20sp"
-                android:ems="10"
-                android:hint="Nombre utensilio"
-                android:inputType="text"
-                android:minHeight="48dp"
-                android:textColor="@color/white"
-                android:textColorHint="@color/amarilloBrillanet" />
-
-            <EditText
-                android:id="@+id/etDescripcionUtensilio"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="Descripción"
-                android:inputType="text"
-                android:minHeight="48dp"
-                android:textColorHint="@color/amarilloBrillanet"
-                tools:ignore="TouchTargetSizeCheck" />
+        <EditText
+            android:id="@+id/etDescripcionUtensilio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Descripción"
+            android:inputType="text"
+            android:minHeight="48dp"
+            android:textColorHint="@color/amarilloBrillanet"
+            tools:ignore="TouchTargetSizeCheck" />
 
 
-            <EditText
-                android:id="@+id/etCantidadUtensilio"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="Cantidad"
-                android:inputType="number"
-                android:minHeight="48dp"
-                android:textColor="@color/white"
-                android:textColorHint="@color/amarilloBrillanet" />
+        <EditText
+            android:id="@+id/etCantidadUtensilio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Cantidad"
+            android:inputType="number"
+            android:minHeight="48dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/amarilloBrillanet" />
 
-            <Button
-                android:id="@+id/btnAgregarUtensilio"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/verdeNeon"
-                android:text="Agregar" />
+        <Button
+            android:id="@+id/btnAgregarUtensilio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/verdeNeon"
+            android:text="Agregar"
+            android:textColor="@color/white" />
 
-            <Button
-                android:id="@+id/btnActualizarUtensilio"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/azulNeon"
-                android:text="Actualizar" />
+        <Button
+            android:id="@+id/btnActualizarUtensilio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/azulNeon"
+            android:text="Actualizar"
+            android:textColor="@color/white" />
 
-            <Button
-                android:id="@+id/btnEliminarUtensilio"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/rojoVibrante"
-                android:text="Eliminar" />
+        <Button
+            android:id="@+id/btnEliminarUtensilio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/rojoVibrante"
+            android:text="Eliminar"
+            android:textColor="@color/white" />
 
-            <Button
-                android:id="@+id/btnBorrarCampos"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/rojoVibrante"
-                android:text="Limpiar campos"
-                android:textColor="@color/white" />
+        <Button
+            android:id="@+id/btnBorrarCampos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/rojoVibrante"
+            android:text="Limpiar campos"
+            android:textColor="@color/white" />
 
-            <ListView
-                android:id="@+id/lvUtensilios"
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:layout_marginTop="20sp" />
+        <ListView
+            android:id="@+id/lvUtensilios"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="20sp" />
 
-            <Button
-                android:id="@+id/btnRegresar"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/rojoVibrante"
-                android:text="Regresar"
-                android:textColor="@color/white" />
-        </LinearLayout>
-    </ScrollView>
+        <Button
+            android:id="@+id/btnRegresar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/rojoVibrante"
+            android:text="Regresar"
+            android:textColor="@color/white" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

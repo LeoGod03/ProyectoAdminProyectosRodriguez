@@ -52,14 +52,16 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:backgroundTint="@color/azulNeon"
-                    android:text="Productos" />
+                    android:text="Productos"
+                    android:textColor="@color/white" />
 
                 <Button
                     android:id="@+id/btnPaquetesVer"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:backgroundTint="@color/azulNeon"
-                    android:text="Paquetes" />
+                    android:text="Paquetes"
+                    tools:textColor="@color/white" />
             </LinearLayout>
 
             <SearchView
@@ -85,21 +87,24 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/azulNeon"
-                android:text="Editar" />
+                android:text="Editar"
+                tools:textColor="@color/white" />
 
             <Button
                 android:id="@+id/btnEliminarProduPaque"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/rojoVibrante"
-                android:text="Eliminar" />
+                android:text="Eliminar"
+                android:textColor="@color/white" />
 
             <Button
                 android:id="@+id/btnDetalles"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/verdeNeon"
-                android:text="Ver detalles" />
+                android:text="Ver detalles"
+                android:textColor="@color/white" />
 
             <Button
                 android:id="@+id/btnRegresar7"
