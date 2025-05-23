@@ -2,7 +2,6 @@ package com.example.proyectofinalbarralatina.GUI
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.proyectofinalbarralatina.databinding.OpcionesProductoPaqueteBinding
 
@@ -26,11 +25,15 @@ class OpcionesProductoPaquete: AppCompatActivity() {
         }
 
         binding.btnImgProductos.setOnClickListener{
-            startActivity(Intent(this, NuevoPorducto::class.java))
+            val intent = Intent(this, NuevoProducto::class.java)
+            intent.putExtra("modo", "nuevo")
+            startActivity(intent)
             finish()
         }
         binding.btnImgPaquetes.setOnClickListener{
-            startActivity(Intent(this, NuevoPaquete::class.java))
+            val intent = Intent(this, NuevoPaquete::class.java)
+            intent.putExtra("modo", "crear")
+            startActivity(intent)
             finish()
         }
 
