@@ -1,4 +1,4 @@
-package com.example.proyectofinalbarralatina
+package com.example.proyectofinalbarralatina.DAO
 
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
