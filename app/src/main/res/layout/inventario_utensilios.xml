@@ -20,29 +20,29 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/tvInventarioIngredientes"
+            android:id="@+id/tvInventarioUtensilios"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20sp"
             android:gravity="center"
-            android:text="Inventario ingredientes"
+            android:text="Inventario utensilios"
             android:textColor="@color/amarilloBrillanet"
             tools:textSize="30sp" />
 
         <EditText
-            android:id="@+id/etNombreIngrediente"
+            android:id="@+id/etNombreUtensilio"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20sp"
             android:ems="10"
-            android:hint="Nombre ingrediente"
+            android:hint="Nombre utensilio"
             android:inputType="text"
             android:minHeight="48dp"
             android:textColor="@color/white"
             android:textColorHint="@color/amarilloBrillanet" />
 
         <EditText
-            android:id="@+id/etDescripcionIngrediente"
+            android:id="@+id/etDescripcionUtensilio"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -52,14 +52,9 @@
             android:textColorHint="@color/amarilloBrillanet"
             tools:ignore="TouchTargetSizeCheck" />
 
-        <Spinner
-            android:id="@+id/spnUnidadesMedida"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:minHeight="48dp" />
 
         <EditText
-            android:id="@+id/etCantidadIngrediente"
+            android:id="@+id/etCantidadUtensilio"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -70,35 +65,35 @@
             android:textColorHint="@color/amarilloBrillanet" />
 
         <Button
-            android:id="@+id/btnAgregarIngrediente"
+            android:id="@+id/btnAgregarUtensilio"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/verdeNeon"
             android:text="Agregar" />
 
         <Button
-            android:id="@+id/btnActualizarIngrediente"
+            android:id="@+id/btnActualizarUtensilio"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/azulNeon"
             android:text="Actualizar" />
 
         <Button
-            android:id="@+id/btnBuscarIngrediente"
+            android:id="@+id/btnBuscarUtensilio"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/azulNeon"
             android:text="Buscar" />
 
         <Button
-            android:id="@+id/btnEliminarIngrediente"
+            android:id="@+id/btnEliminarUtensilio"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/rojoVibrante"
             android:text="Eliminar" />
 
         <ListView
-            android:id="@+id/ltVIngredientes"
+            android:id="@+id/ltVUtensilios"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="20sp" />
