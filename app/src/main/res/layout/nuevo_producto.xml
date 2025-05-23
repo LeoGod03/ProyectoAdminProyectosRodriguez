@@ -90,7 +90,7 @@
 
             <!-- Spinner de utensilios -->
             <ListView
-                android:id="@+id/listaIngredientes"
+                android:id="@+id/lvIngredientesProducto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
@@ -119,7 +119,7 @@
 
             <!-- Lista de utensilios -->
             <ListView
-                android:id="@+id/listaUtensilios"
+                android:id="@+id/lvUtensiliosProducto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
