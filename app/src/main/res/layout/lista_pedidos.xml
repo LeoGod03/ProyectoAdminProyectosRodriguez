@@ -63,7 +63,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/verdeNeon"
-                android:text="Entregar Pedido" />
+                android:text="Entregar Pedido"
+                android:textColor="@color/white" />
 
             <Button
                 android:id="@+id/btnActualizarPedido"
@@ -78,14 +79,16 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/rojoVibrante"
-                android:text="Eliminar Pedido" />
+                android:text="Eliminar Pedido"
+                android:textColor="@color/white" />
 
             <Button
                 android:id="@+id/btnDetallesPedido"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/azulNeon"
-                android:text="Ver Detalles" />
+                android:text="Ver Detalles"
+                android:textColor="@color/white" />
 
             <Button
                 android:id="@+id/btnRegresar8"

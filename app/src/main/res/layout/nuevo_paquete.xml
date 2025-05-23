@@ -78,7 +78,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/azulNeon"
-                android:text="Agregar producto" />
+                android:text="Agregar producto"
+                android:textColor="@color/white" />
 
 
             <ListView
@@ -102,7 +103,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/verdeNeon"
-                android:text="Guardar paquete" />
+                android:text="Guardar paquete"
+                android:textColor="@color/white" />
 
             <Button
                 android:id="@+id/btnReegresar5"

@@ -67,7 +67,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/azulNeon"
-                android:text="Agregar Producto" />
+                android:text="Agregar Producto"
+                android:textColor="@color/white" />
 
             <Spinner
                 android:id="@+id/spinnerPaquetes"
@@ -91,7 +92,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/azulNeon"
-                android:text="Agregar Paquete" />
+                android:text="Agregar Paquete"
+                android:textColor="@color/white" />
 
             <TextView
                 android:id="@+id/tvTotalPagar"
@@ -111,7 +113,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20sp"
                 android:backgroundTint="@color/verdeNeon"
-                android:text="Confirmar Pedido" />
+                android:text="Confirmar Pedido"
+                android:textColor="@color/white" />
 
             <Button
                 android:id="@+id/btnRegresar6"

@@ -84,7 +84,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/azulNeon"
-                android:text="Agregar Ingrediente" />
+                android:text="Agregar Ingrediente"
+                android:textColor="@color/white" />
 
             <!-- Lista de ingredientes -->
 
@@ -115,7 +116,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/azulNeon"
-                android:text="Agregar Utensilio" />
+                android:text="Agregar Utensilio"
+                android:textColor="@color/white" />
 
             <!-- Lista de utensilios -->
             <ListView
@@ -139,7 +141,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/verdeNeon"
-                android:text="Guardar Producto" />
+                android:text="Guardar Producto"
+                android:textColor="@color/white" />
 
             <Button
                 android:id="@+id/btnReegresar4"
