@@ -1,4 +1,4 @@
-package com.example.proyectofinalbarralatina
+package com.example.proyectofinalbarralatina.DAO
 
 import android.content.ContentValues
 import com.example.proyectofinalbarralatina.dataclass.Paquete
