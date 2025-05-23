@@ -1,11 +1,11 @@
 package com.example.proyectofinalbarralatina.GUI
 
-import android.R
 import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.ArrayAdapter
+import android.widget.SearchView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.proyectofinalbarralatina.DAO.DatabaseHelper
@@ -21,12 +21,14 @@ class ListaProductosPaquetes : AppCompatActivity() {
     private lateinit var paqueteDAO: PaqueteDAO
     private lateinit var productoDAO: ProductoDAO
 
+    private lateinit var adapter: ArrayAdapter<String>
+    private lateinit var listaCompleta: List<String>
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ListaProductosPaquetesBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Obtener el tipo de usuario del Intent
         usuarioTipo = intent.getStringExtra("usuario_tipo")
 
         val dbHelper = DatabaseHelper(this)
@@ -104,18 +106,33 @@ class ListaProductosPaquetes : AppCompatActivity() {
             binding.btnEliminarProduPaque.isEnabled = false
         }
 
+        binding.searchVBuSqueda.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                return false
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                if (newText.isNullOrBlank()) {
+                    adapter.clear()
+                    adapter.addAll(listaCompleta)
+                } else {
+                    val filtrado = listaCompleta.filter { it.contains(newText, ignoreCase = true) }
+                    adapter.clear()
+                    adapter.addAll(filtrado)
+                }
+                return true
+            }
+        })
+
 
         cargarLista()
     }
     private fun cargarLista() {
-        val adapter = if (modoActual == "producto") {
-            val productos = productoDAO.obtenerTodosLosProductos()
-            ArrayAdapter(this, R.layout.simple_list_item_1, productos.map { "${it.id} - ${it.nombre} - ${it.precio}" })
-        } else {
-            val paquetes = paqueteDAO.obtenerTodosLosPaquetes()
-            ArrayAdapter(this, android.R.layout.simple_list_item_1, paquetes.map { "${it.id} - ${it.nombre} - ${it.precio}" })
-        }
 
+        val productos = productoDAO.obtenerTodosLosProductos()
+        listaCompleta = productos.map { "${it.id} - ${it.nombre} - ${it.precio}" }
+
+        adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, listaCompleta)
         binding.listaProductos.adapter = adapter
     }
 
@@ -123,10 +140,10 @@ class ListaProductosPaquetes : AppCompatActivity() {
         val intent = when (usuarioTipo) {
             "admin" -> Intent(this, OpcionesProductoPaquete::class.java)
             "encargado" -> Intent(this, EncargadoActivity::class.java)
-            else -> Intent(this, MainActivity::class.java) // Por defecto
+            else -> Intent(this, MainActivity::class.java)
         }
         startActivity(intent)
-        finish() // Cierra esta actividad
+        finish()
     }
 
     private fun eliminarElemento(id: Int) {

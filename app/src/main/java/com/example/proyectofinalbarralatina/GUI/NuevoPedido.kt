@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.proyectofinalbarralatina.databinding.RealizarPedidoBinding
 import android.content.Intent
+import android.speech.tts.TextToSpeech
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import com.example.proyectofinalbarralatina.DAO.DatabaseHelper
@@ -29,6 +30,8 @@ class NuevoPedido : AppCompatActivity() {
 
     private var idPedido: Int? = null
     private var modo: String? = null
+
+    private lateinit var tts: TextToSpeech
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -57,7 +60,12 @@ class NuevoPedido : AppCompatActivity() {
             cargarDatosPedido(idPedido!!)
         }
 
-        // Configurar botones
+        tts = TextToSpeech(this) { status ->
+            if (status == TextToSpeech.SUCCESS) {
+                tts.language = Locale.getDefault() // Configura el idioma
+            }
+        }
+
         binding.btnAgregarProductos.setOnClickListener { agregarProductoAPedido() }
         binding.btnAgregarPaquete.setOnClickListener { agregarPaqueteAPedido() }
         binding.btnConfirmarPedido.setOnClickListener { confirmarPedido() }
@@ -77,12 +85,10 @@ class NuevoPedido : AppCompatActivity() {
             binding.tvTituloPedido.text = "Editar Pedido ID: ${pedido.id}"
             binding.tvTotalPagar.text = "Total a Pagar: $${pedido.total}"
 
-            // Cargar los productos del pedido
             productosPedido.clear()
             productosPedido.addAll(pedido.productos)
             actualizarListaPedido()
 
-            // Cargar los paquetes del pedido
             paquetesPedido.clear()
             paquetesPedido.addAll(pedido.paquetes)
             actualizarListaPedido()
@@ -119,6 +125,7 @@ class NuevoPedido : AppCompatActivity() {
         val fecha = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(Date())
         val total = calcularTotalPedido()
         val pedido = Pedido(-1, fecha, total, productosPedido, paquetesPedido)
+
         if (modo == "editar" && idPedido != -1) {
             pedido.id = idPedido!!
             pedidoDAO.actualizarPedido(pedido)
@@ -127,8 +134,10 @@ class NuevoPedido : AppCompatActivity() {
             return
         }
         val idPedido = pedidoDAO.agregarPedido(pedido)
+        val mensaje = "Pedido aceptado con ID ${idPedido} con monto de: ${total} pesos"
+        tts.speak(mensaje, TextToSpeech.QUEUE_FLUSH, null, null)
 
-        Toast.makeText(this, "Pedido confirmado con ID: $idPedido", Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, mensaje, Toast.LENGTH_SHORT).show()
         limpiarCampos()
     }
     private fun actualizarListaPedido() {
@@ -153,5 +162,11 @@ class NuevoPedido : AppCompatActivity() {
             paqueteDAO.obtenerPaquete(it.idPaquete)?.precio ?: 0.0 * it.cantidad
         }
         return totalProductos + totalPaquetes
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        tts.stop()
+        tts.shutdown()
     }
 }
