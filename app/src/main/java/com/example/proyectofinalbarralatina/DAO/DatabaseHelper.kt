@@ -4,7 +4,7 @@ import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 
-class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, "MiDB", null, 1) {
+class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, "MiDB", null, 2) {
 
     private val CREATE_INGREDIENTES_TABLE = """
         CREATE TABLE ingredientes (

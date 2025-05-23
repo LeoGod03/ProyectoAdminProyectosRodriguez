@@ -49,7 +49,7 @@ class NuevoPaquete: AppCompatActivity(){
         cargarSpinnerProductos()
 
         // Configurar botones
-        binding.btnAgregarProducto.setOnClickListener { agregarProductoAPaquete() }
+        binding.btnAgregarProductos.setOnClickListener { agregarProductoAPaquete() }
         binding.btnGuardarPaquete.setOnClickListener { guardarPaquete() }
     }
     private fun cargarDatosPaquete(id: Int) {

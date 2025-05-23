@@ -40,32 +40,18 @@
                 android:textSize="20sp" />
 
             <!-- Pestañas de pedidos -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:orientation="horizontal"
-                android:padding="10dp">
-
-                <Button
-                    android:id="@+id/btnPedidosActivos"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:backgroundTint="@color/azulNeon"
-                    android:text="En proceso" />
-
-                <Button
-                    android:id="@+id/btnPedidosCancelados"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:backgroundTint="@color/rojoVibrante"
-                    android:text="Cancelados" />
-            </LinearLayout>
 
             <ListView
                 android:id="@+id/lvPedidos"
                 android:layout_width="match_parent"
                 android:layout_height="609dp" />
+
+            <TextView
+                android:id="@+id/tvPedidoSeleccionado"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="id"
+                android:textColor="@color/amarilloBrillanet" />
 
             <Button
                 android:id="@+id/btnEntregarPedido"
@@ -75,11 +61,19 @@
                 android:text="Entregar Pedido" />
 
             <Button
-                android:id="@+id/btnCancelarPedido"
+                android:id="@+id/btnActualizarPedido"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/azulNeon"
+                android:text="Actualizar"
+                android:textColor="@color/white" />
+
+            <Button
+                android:id="@+id/btnEliminarPedido"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/rojoVibrante"
-                android:text="Cancelar Pedido" />
+                android:text="Eliminar Pedido" />
 
             <Button
                 android:id="@+id/btnDetallesPedido"
