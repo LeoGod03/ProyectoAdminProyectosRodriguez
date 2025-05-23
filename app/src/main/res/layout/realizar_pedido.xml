@@ -91,28 +91,14 @@
                 android:textSize="18sp" />
 
             <!-- Botones para cancelar o confirmar pedido -->
-            <LinearLayout
-                android:layout_width="match_parent"
+
+            <Button
+                android:id="@+id/btnConfirmarPedido"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="horizontal"
-                android:padding="10dp">
-
-                <Button
-                    android:id="@+id/btnCancelarPedido"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:backgroundTint="@color/rojoVibrante"
-                    android:text="Cancelar Pedido" />
-
-                <Button
-                    android:id="@+id/btnConfirmarPedido"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:backgroundTint="@color/verdeNeon"
-                    android:text="Confirmar Pedido" />
-
-            </LinearLayout>
+                android:layout_marginTop="20sp"
+                android:backgroundTint="@color/verdeNeon"
+                android:text="Confirmar Pedido" />
 
             <Button
                 android:id="@+id/btnRegresar6"

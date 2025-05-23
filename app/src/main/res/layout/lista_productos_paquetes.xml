@@ -7,67 +7,68 @@
     android:background="@color/fondo">
 
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
-        android:layout_marginBottom="20dp"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:padding="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/titulo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:padding="10dp"
-            android:text="Gestión de Productos"
-            android:textColor="@color/amarilloBrillanet"
-            android:textSize="20sp" />
-
-        <!-- Pestañas -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
             android:gravity="center"
-            android:orientation="horizontal"
+            android:orientation="vertical"
             android:padding="10dp">
 
-            <Button
-                android:id="@+id/btnProductosVer"
-                android:layout_width="wrap_content"
+            <TextView
+                android:id="@+id/titulo"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/azulNeon"
-                android:text="Productos" />
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="Gestión de Productos"
+                android:textColor="@color/amarilloBrillanet"
+                android:textSize="20sp" />
 
-            <Button
-                android:id="@+id/btnPaquetesVer"
-                android:layout_width="wrap_content"
+            <!-- Pestañas -->
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/azulNeon"
-                android:text="Paquetes" />
-        </LinearLayout>
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="10dp">
 
-        <!-- Lista de productos -->
-        <ListView
-            android:id="@+id/listaProductos"
-            android:layout_width="match_parent"
-            android:layout_height="466dp" />
+                <Button
+                    android:id="@+id/btnProductosVer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/azulNeon"
+                    android:text="Productos" />
 
-        <!-- Botones de acción -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="horizontal"
-            android:padding="10dp">
+                <Button
+                    android:id="@+id/btnPaquetesVer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/azulNeon"
+                    android:text="Paquetes" />
+            </LinearLayout>
+
+            <!-- Lista de productos -->
+            <ListView
+                android:id="@+id/listaProductos"
+                android:layout_width="match_parent"
+                android:layout_height="466dp" />
+
+            <!-- Botones de acción -->
 
             <Button
                 android:id="@+id/btnEditarProduPaque"
@@ -90,16 +91,15 @@
                 android:backgroundTint="@color/verdeNeon"
                 android:text="Ver detalles" />
 
+            <Button
+                android:id="@+id/btnRegresar7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/rojoVibrante"
+                android:text="Regresar"
+                android:textColor="@color/white" />
+
         </LinearLayout>
-
-        <Button
-            android:id="@+id/btnRegresar7"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/rojoVibrante"
-            android:text="Regresar"
-            android:textColor="@color/white" />
-
-    </LinearLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

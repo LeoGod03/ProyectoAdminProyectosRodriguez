@@ -6,76 +6,77 @@
     android:layout_height="match_parent"
     android:background="@color/fondo">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="20dp"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:padding="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/txtTitulo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:padding="10dp"
-            android:text="Lista de pedidos"
-            android:textColor="@color/amarilloBrillanet"
-            android:textSize="20sp" />
-
-        <!-- Pestañas de pedidos -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
             android:gravity="center"
-            android:orientation="horizontal"
+            android:orientation="vertical"
             android:padding="10dp">
 
-            <Button
-                android:id="@+id/btnPedidosActivos"
-                android:layout_width="wrap_content"
+            <TextView
+                android:id="@+id/txtTitulo"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/azulNeon"
-                android:text="En proceso" />
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="Lista de pedidos"
+                android:textColor="@color/amarilloBrillanet"
+                android:textSize="20sp" />
 
-            <Button
-                android:id="@+id/btnPedidosCancelados"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/rojoVibrante"
-                android:text="Cancelados" />
-        </LinearLayout>
+            <!-- Pestañas de pedidos -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="10dp">
 
-        <ListView
-            android:id="@+id/lvPedidos"
-            android:layout_width="match_parent"
-            android:layout_height="452dp" />
+                <Button
+                    android:id="@+id/btnPedidosActivos"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/azulNeon"
+                    android:text="En proceso" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="horizontal"
-            android:padding="10dp">
+                <Button
+                    android:id="@+id/btnPedidosCancelados"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/rojoVibrante"
+                    android:text="Cancelados" />
+            </LinearLayout>
+
+            <ListView
+                android:id="@+id/lvPedidos"
+                android:layout_width="match_parent"
+                android:layout_height="609dp" />
 
             <Button
                 android:id="@+id/btnEntregarPedido"
-                android:layout_width="111dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/verdeNeon"
                 android:text="Entregar Pedido" />
 
             <Button
                 android:id="@+id/btnCancelarPedido"
-                android:layout_width="114dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/rojoVibrante"
                 android:text="Cancelar Pedido" />
@@ -87,16 +88,15 @@
                 android:backgroundTint="@color/azulNeon"
                 android:text="Ver Detalles" />
 
+            <Button
+                android:id="@+id/btnRegresar8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/rojoVibrante"
+                android:text="Regresar"
+                android:textColor="@color/white" />
+
         </LinearLayout>
-
-        <Button
-            android:id="@+id/btnRegresar8"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/rojoVibrante"
-            android:text="Regresar"
-            android:textColor="@color/white" />
-
-    </LinearLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

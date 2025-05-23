@@ -30,7 +30,7 @@
             android:textSize="30sp" />
 
         <ImageButton
-            android:id="@+id/btnImgProductoPaquete2"
+            android:id="@+id/btnImgProductoPaquete"
             android:layout_width="180dp"
             android:layout_height="180dp"
             android:background="@drawable/borde_brillante"
@@ -40,7 +40,7 @@
             tools:layout_marginTop="30dp" />
 
         <TextView
-            android:id="@+id/tvProductoPaquete2"
+            android:id="@+id/tvProductoPaquete"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
