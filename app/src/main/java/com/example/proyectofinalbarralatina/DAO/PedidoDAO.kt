@@ -33,6 +33,25 @@ class PedidoDAO(private val dbHelper: DatabaseHelper) {
         }
         db.insert("pedido_producto", null, values)
     }
+    fun obtenerPedido(idPedido: Int): Pedido? {
+        val db = dbHelper.readableDatabase
+        val cursor = db.rawQuery("SELECT * FROM pedidos WHERE id = ?", arrayOf(idPedido.toString()))
+
+        if (cursor.moveToFirst()) {
+            val id = cursor.getInt(cursor.getColumnIndexOrThrow("id"))
+            val fecha = cursor.getString(cursor.getColumnIndexOrThrow("fecha"))
+            val total = cursor.getDouble(cursor.getColumnIndexOrThrow("total"))
+
+            val productos = obtenerProductosDePedido(id)
+            val paquetes = obtenerPaquetesDePedido(id)
+
+            cursor.close()
+            return Pedido(id, fecha, total, productos, paquetes)
+        }
+
+        cursor.close()
+        return null
+    }
 
     fun agregarPaqueteAPedido(idPedido: Int, idPaquete: Int, cantidad: Int) {
         val db = dbHelper.writableDatabase
@@ -97,7 +116,7 @@ class PedidoDAO(private val dbHelper: DatabaseHelper) {
         db.delete("pedido_paquete", "id_pedido = ?", arrayOf(idPedido.toString()))
         db.delete("pedidos", "id = ?", arrayOf(idPedido.toString()))
     }
-    fun actualizarPedidoCompleto(pedido: Pedido) {
+    fun actualizarPedido(pedido: Pedido) {
         val db = dbHelper.writableDatabase
         db.beginTransaction()
         try {
