@@ -62,13 +62,16 @@
                     android:text="Paquetes" />
             </LinearLayout>
 
-            <!-- Lista de productos -->
+            <SearchView
+                android:id="@+id/searchVBuSqueda"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
             <ListView
                 android:id="@+id/listaProductos"
                 android:layout_width="match_parent"
                 android:layout_height="466dp" />
 
-            <!-- Botones de acción -->
 
             <TextView
                 android:id="@+id/tvItemSeleccionado"

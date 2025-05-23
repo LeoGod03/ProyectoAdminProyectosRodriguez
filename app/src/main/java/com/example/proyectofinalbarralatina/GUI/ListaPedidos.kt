@@ -3,8 +3,10 @@ package com.example.proyectofinalbarralatina.GUI
 import android.R
 import android.app.AlertDialog
 import android.content.Intent
+import android.media.MediaPlayer
 import android.os.Bundle
 import android.widget.ArrayAdapter
+import android.widget.SearchView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.proyectofinalbarralatina.DAO.DatabaseHelper
@@ -16,25 +18,43 @@ class ListaPedidos: AppCompatActivity()  {
     private var usuarioTipo: String? = null
     private lateinit var pedidoDAO: PedidoDAO
 
-    private var modoActual = "pendiente" // Indica si se muestran pedidos pendientes o entregados
-    private var idPedidoSeleccionado: Int? = null // del pedido selecciona
+    private var idPedidoSeleccionado: Int? = null
+
+    private lateinit var adapter: ArrayAdapter<String>
+    private lateinit var listaPedidos: List<String>
+    private lateinit var mediaPlayer: MediaPlayer
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ListaPedidosBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        // Obtener el tipo de usuario del Intent
         usuarioTipo = intent.getStringExtra("usuario_tipo")
         binding.btnRegresar8.setOnClickListener {
             regresarSegunUsuario()
         }
-        // Inicializar base de datos
         val dbHelper = DatabaseHelper(this)
         pedidoDAO = PedidoDAO(dbHelper)
 
-        // Cargar lista de pedidos
+        binding.searchVPedidos.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                return false
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                if (newText.isNullOrBlank()) {
+                    adapter.clear()
+                    adapter.addAll(listaPedidos)
+                } else {
+                    val filtrado = listaPedidos.filter { it.contains(newText, ignoreCase = true) }
+                    adapter.clear()
+                    adapter.addAll(filtrado)
+                }
+                return true
+            }
+        })
+
         cargarListaPedidos()
 
-        // Configurar botones
         binding.btnActualizarPedido.setOnClickListener { actualizarPedidoSeleccionado() }
         binding.btnEliminarPedido.setOnClickListener { eliminarPedidoSeleccionado() }
         binding.btnDetallesPedido.setOnClickListener { mostrarDetallesPedido() }
@@ -44,7 +64,8 @@ class ListaPedidos: AppCompatActivity()  {
     }
     private fun cargarListaPedidos() {
         val pedidos = pedidoDAO.obtenerPedidos()
-        val adapter = ArrayAdapter(this, R.layout.simple_list_item_1, pedidos.map { "ID ${it.id} - Total: $${it.total}" })
+        listaPedidos = pedidos.map { "ID ${it.id} - Total: $${it.total}" }
+        adapter = ArrayAdapter(this, R.layout.simple_list_item_1, listaPedidos)
         binding.lvPedidos.adapter = adapter
 
         binding.lvPedidos.setOnItemClickListener { parent, _, position, _ ->
@@ -85,6 +106,9 @@ class ListaPedidos: AppCompatActivity()  {
                     pedidoDAO.eliminarPedido(id)
                     cargarListaPedidos()
                     Toast.makeText(this, "Pedido entregado", Toast.LENGTH_SHORT).show()
+
+                    //mediaPlayer = MediaPlayer.create(this, soundId)
+                    //mediaPlayer.start()
                 }
                 .setNegativeButton("Cancelar", null)
                 .show()
@@ -117,5 +141,13 @@ class ListaPedidos: AppCompatActivity()  {
         }
         startActivity(intent)
         finish() // Cierra esta actividad
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        if (::mediaPlayer.isInitialized) {
+            mediaPlayer.release()
+        }
+
     }
 }

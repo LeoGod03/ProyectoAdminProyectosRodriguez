@@ -51,7 +51,7 @@
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textColorHint="@color/white"
-            tools:hint="Usuario del sistema" />
+            android:hint="Usuario del sistema" />
 
         <EditText
             android:id="@+id/etpassPassword"
@@ -61,7 +61,6 @@
             android:hint="Contraseña"
             android:inputType="textPassword"
             android:minHeight="48dp"
-            android:shadowRadius="5"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textColorHint="@color/white" />

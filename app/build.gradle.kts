@@ -9,7 +9,9 @@ android {
     viewBinding{
         enable = true
     }
-
+    dataBinding{
+        enable = true
+    }
     defaultConfig {
         applicationId = "com.example.proyectofinalbarralatina"
         minSdk = 24
