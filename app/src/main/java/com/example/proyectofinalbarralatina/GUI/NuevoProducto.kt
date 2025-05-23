@@ -64,6 +64,7 @@ class NuevoProducto: AppCompatActivity() {
         val producto = productoDAO.obtenerProducto(id)
 
         if (producto != null) {
+            binding.tvNuevoProducto.text = "Editar Producto"
             binding.etNombreProducto.setText(producto.nombre)
             binding.etDescripcionProducto.setText(producto.descripcion)
             binding.etPrecioProducto.setText(producto.precio.toString())
