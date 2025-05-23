@@ -23,6 +23,17 @@
         </activity>
         <activity android:name=".GUI.AdminActivity" />
         <activity android:name=".GUI.EncargadoActivity" />
+        <activity android:name=".GUI.OpcionesInventario" />
+        <activity android:name=".GUI.OpcionesProductoPaquete" />
+        <activity android:name=".GUI.ListaProductosPaquetes" />
+        <activity android:name=".GUI.ListaPedidos" />
+        <activity android:name=".GUI.IngredientesInventario" />
+        <activity android:name=".GUI.UtensiliosInventario" />
+        <activity android:name=".GUI.NuevoPorducto" />
+        <activity android:name=".GUI.NuevoPaquete" />
+        <activity android:name=".GUI.OpcionesPedido" />
+        <activity android:name=".GUI.NuevoPedido" />
+
     </application>
 
 </manifest>
