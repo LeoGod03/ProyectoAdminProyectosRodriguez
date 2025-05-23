@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fondo">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:padding="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <!-- Botón para regresar -->
+
+            <!-- Título -->
+            <TextView
+                android:id="@+id/tvNuevoProducto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="Agregar Nuevo Producto"
+                android:textColor="@color/amarilloBrillanet"
+                android:textSize="20sp" />
+
+            <!-- Campos de entrada -->
+            <EditText
+                android:id="@+id/etNombreProducto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nombre del producto"
+                android:minHeight="48dp"
+                android:padding="8dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/amarilloBrillanet" />
+
+            <EditText
+                android:id="@+id/etDescripcionProducto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="top"
+                android:hint="Descripción"
+                android:minHeight="100dp"
+                android:padding="8dp"
+                android:textColorHint="@color/amarilloBrillanet" />
+
+            <!-- Spinner de ingredientes -->
+            <Spinner
+                android:id="@+id/spinnerIngredientes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp" />
+
+            <EditText
+                android:id="@+id/etCantidadIngrediente"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Cantidad"
+                android:inputType="number"
+                android:minHeight="48dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/amarilloBrillanet" />
+
+            <Button
+                android:id="@+id/btnAgregarIngrediente"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/azulNeon"
+                android:text="Agregar Ingrediente" />
+
+            <!-- Lista de ingredientes -->
+
+            <!-- Spinner de utensilios -->
+            <ListView
+                android:id="@+id/listaIngredientes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <Spinner
+                android:id="@+id/spinnerUtensilios"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp" />
+
+            <EditText
+                android:id="@+id/etCantidadUtensilio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Cantidad"
+                android:inputType="number"
+                android:minHeight="48dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/amarilloBrillanet" />
+
+            <Button
+                android:id="@+id/btnAgregarUtensilio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/azulNeon"
+                android:text="Agregar Utensilio" />
+
+            <!-- Lista de utensilios -->
+            <ListView
+                android:id="@+id/listaUtensilios"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <!-- Campo de precio -->
+            <EditText
+                android:id="@+id/etPrecio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Precio"
+                android:inputType="numberDecimal"
+                android:minHeight="48dp"
+                android:textColorHint="@color/amarilloBrillanet"
+                tools:textColor="@color/white" />
+
+            <Button
+                android:id="@+id/btnGuardarProducto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/verdeNeon"
+                android:text="Guardar Producto" />
+
+            <Button
+                android:id="@+id/btnReegresar4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/rojoVibrante"
+                android:text="Regresar"
+                android:textColor="@color/white" />
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
