@@ -1,6 +1,5 @@
 package com.example.proyectofinalbarralatina.GUI
 
-import android.R
 import android.app.AlertDialog
 import android.content.Intent
 import android.media.MediaPlayer
@@ -11,6 +10,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.proyectofinalbarralatina.DAO.DatabaseHelper
 import com.example.proyectofinalbarralatina.DAO.PedidoDAO
+import com.example.proyectofinalbarralatina.R
 import com.example.proyectofinalbarralatina.databinding.ListaPedidosBinding
 
 class ListaPedidos: AppCompatActivity()  {
@@ -65,7 +65,7 @@ class ListaPedidos: AppCompatActivity()  {
     private fun cargarListaPedidos() {
         val pedidos = pedidoDAO.obtenerPedidos()
         listaPedidos = pedidos.map { "ID ${it.id} - Total: $${it.total}" }
-        adapter = ArrayAdapter(this, R.layout.simple_list_item_1, listaPedidos)
+        adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, listaPedidos)
         binding.lvPedidos.adapter = adapter
 
         binding.lvPedidos.setOnItemClickListener { parent, _, position, _ ->
@@ -107,8 +107,8 @@ class ListaPedidos: AppCompatActivity()  {
                     cargarListaPedidos()
                     Toast.makeText(this, "Pedido entregado", Toast.LENGTH_SHORT).show()
 
-                    //mediaPlayer = MediaPlayer.create(this, soundId)
-                    //mediaPlayer.start()
+                    mediaPlayer = MediaPlayer.create(this, R.raw.caja)
+                    mediaPlayer.start()
                 }
                 .setNegativeButton("Cancelar", null)
                 .show()
