@@ -70,6 +70,13 @@
 
             <!-- Botones de acción -->
 
+            <TextView
+                android:id="@+id/tvItemSeleccionado"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Id item"
+                android:textColor="@color/amarilloBrillanet" />
+
             <Button
                 android:id="@+id/btnEditarProduPaque"
                 android:layout_width="wrap_content"

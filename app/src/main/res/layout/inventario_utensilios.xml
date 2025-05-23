@@ -79,18 +79,19 @@
                 android:text="Actualizar" />
 
             <Button
-                android:id="@+id/btnBuscarUtensilio"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/azulNeon"
-                android:text="Buscar" />
-
-            <Button
                 android:id="@+id/btnEliminarUtensilio"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/rojoVibrante"
                 android:text="Eliminar" />
+
+            <Button
+                android:id="@+id/btnBorrarCampos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/rojoVibrante"
+                android:text="Limpiar campos"
+                android:textColor="@color/white" />
 
             <ListView
                 android:id="@+id/lvUtensilios"

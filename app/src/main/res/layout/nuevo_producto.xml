@@ -92,7 +92,7 @@
             <ListView
                 android:id="@+id/lvIngredientesProducto"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="130dp" />
 
             <Spinner
                 android:id="@+id/spinnerUtensilios"
@@ -121,7 +121,7 @@
             <ListView
                 android:id="@+id/lvUtensiliosProducto"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="118dp" />
 
             <!-- Campo de precio -->
             <EditText

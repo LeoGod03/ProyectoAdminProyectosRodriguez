@@ -74,7 +74,7 @@
                 android:textColorHint="@color/amarilloBrillanet" />
 
             <Button
-                android:id="@+id/btnAgregarProducto"
+                android:id="@+id/btnAgregarProductos"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/azulNeon"
