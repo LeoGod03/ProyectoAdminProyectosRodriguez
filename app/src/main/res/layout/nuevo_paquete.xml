@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -28,32 +27,28 @@
             android:orientation="vertical"
             android:padding="10dp">
 
-            <!-- Botón para regresar -->
-
-            <!-- Título -->
             <TextView
                 android:id="@+id/tvNuevoProducto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:padding="10dp"
-                android:text="Agregar Nuevo Producto"
+                android:text="Agregar Nuevo Paquete"
                 android:textColor="@color/amarilloBrillanet"
                 android:textSize="20sp" />
 
-            <!-- Campos de entrada -->
             <EditText
-                android:id="@+id/etNombreProducto"
+                android:id="@+id/etNombrePaquete"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Nombre del producto"
+                android:hint="Nombre del paquete"
                 android:minHeight="48dp"
                 android:padding="8dp"
                 android:textColor="@color/white"
                 android:textColorHint="@color/amarilloBrillanet" />
 
             <EditText
-                android:id="@+id/etDescripcionProducto"
+                android:id="@+id/etDescripcionPaquete"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="top"
@@ -62,15 +57,14 @@
                 android:padding="8dp"
                 android:textColorHint="@color/amarilloBrillanet" />
 
-            <!-- Spinner de ingredientes -->
             <Spinner
-                android:id="@+id/spinnerIngredientes"
+                android:id="@+id/spinnerProductos"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:minHeight="48dp" />
 
             <EditText
-                android:id="@+id/etCantidadIngrediente"
+                android:id="@+id/etCantidadProducto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Cantidad"
@@ -80,52 +74,21 @@
                 android:textColorHint="@color/amarilloBrillanet" />
 
             <Button
-                android:id="@+id/btnAgregarIngrediente"
+                android:id="@+id/btnAgregarProducto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/azulNeon"
-                android:text="Agregar Ingrediente" />
+                android:text="Agregar producto" />
 
-            <!-- Lista de ingredientes -->
 
-            <!-- Spinner de utensilios -->
             <ListView
-                android:id="@+id/listaIngredientes"
+                android:id="@+id/listaProductos"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="134dp" />
 
-            <Spinner
-                android:id="@+id/spinnerUtensilios"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:minHeight="48dp" />
 
             <EditText
-                android:id="@+id/etCantidadUtensilio"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Cantidad"
-                android:inputType="number"
-                android:minHeight="48dp"
-                android:textColor="@color/white"
-                android:textColorHint="@color/amarilloBrillanet" />
-
-            <Button
-                android:id="@+id/btnAgregarUtensilio"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/azulNeon"
-                android:text="Agregar Utensilio" />
-
-            <!-- Lista de utensilios -->
-            <ListView
-                android:id="@+id/listaUtensilios"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-            <!-- Campo de precio -->
-            <EditText
-                android:id="@+id/etPrecioProducto"
+                android:id="@+id/etPrecioPaquete"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Precio"
@@ -135,14 +98,14 @@
                 tools:textColor="@color/white" />
 
             <Button
-                android:id="@+id/btnGuardarProducto"
+                android:id="@+id/btnGuardarPaquete"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/verdeNeon"
-                android:text="Guardar Producto" />
+                android:text="Guardar paquete" />
 
             <Button
-                android:id="@+id/btnReegresar4"
+                android:id="@+id/btnReegresar5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/rojoVibrante"
