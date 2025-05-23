@@ -128,9 +128,15 @@ class ListaProductosPaquetes : AppCompatActivity() {
         cargarLista()
     }
     private fun cargarLista() {
+        if (modoActual == "producto") {
+            val productos = productoDAO.obtenerTodosLosProductos()
+            listaCompleta = productos.map { "${it.id} - ${it.nombre} - ${it.precio}" }
+        }else{
+            val paquetes = paqueteDAO.obtenerTodosLosPaquetes()
+            listaCompleta = paquetes.map { "${it.id} - ${it.nombre} - ${it.precio}" }
+        }
 
-        val productos = productoDAO.obtenerTodosLosProductos()
-        listaCompleta = productos.map { "${it.id} - ${it.nombre} - ${it.precio}" }
+
 
         adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, listaCompleta)
         binding.listaProductos.adapter = adapter

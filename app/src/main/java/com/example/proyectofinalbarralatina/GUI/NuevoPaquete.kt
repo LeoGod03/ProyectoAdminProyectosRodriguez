@@ -56,6 +56,7 @@ class NuevoPaquete: AppCompatActivity(){
         val paquete = paqueteDAO.obtenerPaquete(id)
 
         if (paquete != null) {
+            binding.tvNuevoProducto.text = "Editar Paquete"
             binding.etNombrePaquete.setText(paquete.nombre)
             binding.etDescripcionPaquete.setText(paquete.descripcion)
             binding.etPrecioPaquete.setText(paquete.precio.toString())
